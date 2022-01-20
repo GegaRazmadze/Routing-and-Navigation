@@ -1,3 +1,8 @@
+# Angular Routing
+
+<p>In a single-page app, you change what the user sees by showing or hiding portions of the display that correspond to particular components, rather than going out to the server to get a new page. As users perform application tasks, they need to move between the different <a href="https://angular.io/guide/glossary#view">views</a> that you have defined.</p>
+<p>To handle the navigation from one view to the next, you use the Angular <a href="https://angular.io/api/router/Router">**Router**</a>. The Router enables navigation by interpreting a browser URL as an instruction to change the view.</p>
+
 # RoutingAndNavigation
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
