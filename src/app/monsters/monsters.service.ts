@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Monster } from './monster.model';
-import { BehaviorSubject, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { Monster } from '../monsters/monster.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MonstersService {
-  monsters$ = of([
+  monsters: Monster[] = [
     {
       id: 1,
       name: 'Leanne Graham',
@@ -68,15 +67,21 @@ export class MonstersService {
       username: 'Moriah.Stanton',
       email: 'Rey.Padberg@karina.biz',
     },
-  ]);
+  ];
+  // monsters$: BehaviorSubject<Monster[]> = new BehaviorSubject();
 
   constructor() {}
 
+  get getMonsters() {
+    return [...this.monsters];
+  }
+
   getMonster(id: string | number) {
-    return this.monsters$.pipe(
-      map(
-        (monsters: Monster[]) => monsters.find((monster) => monster.id === +id)!
-      )
-    );
+    return { ...this.monsters.find((monster) => monster.id === +id)! };
+  }
+
+  changeMonsterName(monsterId: number, monsterName: string) {
+    this.monsters.find((monster) => monster.id === +monsterId)!.name =
+      monsterName;
   }
 }

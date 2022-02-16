@@ -1,12 +1,17 @@
-<mat-card *ngIf="monster$ | async as monster">
+<mat-card *ngIf="monster">
   <img
     mat-card-image
     src="https://robohash.org/{{ monster.id }}?set=set2&size=316x316"
     alt="Photo of Monster"
   />
   <mat-card-content>
-    <form #f="ngForm">
-      <input type="text" value="{{ monster.name }}" />
-    </form>
+    <input
+      type="text"
+      value="{{ monster.name }}"
+      [(ngModel)]="monsterName"
+      (ngModelChange)="monsterNameChange(monster.id)"
+    />
   </mat-card-content>
 </mat-card>
+
+<!-- <p *ngIf="!monster$">No monster</p> -->

@@ -1,9 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Monster } from '../monster.model';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 import { MonstersService } from '../monsters.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-monster-detail',
@@ -11,7 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./monster-detail.component.scss'],
 })
 export class MonsterDetailComponent implements OnInit {
-  monster$!: Observable<Monster>;
+  monster!: Monster;
+  monsterName: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -20,10 +19,12 @@ export class MonsterDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.monster$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.monsterService.getMonster(params.get('id')!)
-      )
-    );
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.monster = this.monsterService.getMonster(params.get('id')!);
+    });
+  }
+
+  monsterNameChange(monsterId: number) {
+    this.monsterService.changeMonsterName(monsterId, this.monsterName);
   }
 }

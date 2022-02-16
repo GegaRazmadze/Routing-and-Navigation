@@ -5,7 +5,7 @@
 //   ActivatedRouteSnapshot,
 // } from '@angular/router';
 // import { Observable, of } from 'rxjs';
-// import { MonstersService } from '../monsters/monsters.service';
+// import { MonstersService } from './monsters.service';
 // import { Monster } from '../monsters/monster.model';
 
 // @Injectable({
@@ -18,7 +18,7 @@
 //   resolve(
 //     route: ActivatedRouteSnapshot,
 //     state: RouterStateSnapshot
-//   ): Observable<boolean> | boolean {
-//     return this.monstersService.fetchMonsters();
+//   ): Observable<any> | boolean {
+//     return this.monstersService.monsters$;
 //   }
 // }

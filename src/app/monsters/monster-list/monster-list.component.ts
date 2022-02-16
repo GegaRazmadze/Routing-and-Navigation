@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { Monster } from '../monster.model';
 import { MonstersService } from '../monsters.service';
 
@@ -9,11 +10,15 @@ import { MonstersService } from '../monsters.service';
   styleUrls: ['./monster-list.component.scss'],
 })
 export class MonsterListComponent implements OnInit {
-  monsters$!: Observable<Monster[]>;
+  monsters!: Monster[];
+  panelOpenState = false;
 
-  constructor(private monstersService: MonstersService) {}
+  constructor(
+    private monstersService: MonstersService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.monsters$ = this.monstersService.monsters$;
+    this.monsters = this.monstersService.getMonsters;
   }
 }
