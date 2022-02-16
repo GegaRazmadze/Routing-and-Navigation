@@ -2,7 +2,7 @@
   <h1 class="mt-3 text-center">monsters</h1>
   <mat-accordion class="my-3">
     <mat-expansion-panel
-      *ngFor="let monster of monsters"
+      *ngFor="let monster of monsters$ | async"
       [routerLink]="['/monsters', monster.id]"
     >
       <mat-expansion-panel-header>
@@ -10,6 +10,7 @@
       </mat-expansion-panel-header>
 
       <!-- <app-monster-detail [monster]="monster"></app-monster-detail> -->
+      <!-- daarenderos mxolod is romelic gaixsneba -->
       <ng-template matExpansionPanelContent>
         <router-outlet></router-outlet>
       </ng-template>

@@ -8,9 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: MonsterListComponent,
-    // resolve: {
-    //   hero: MonstersResolverResolver,
-    // },
     children: [
       { path: ':id', component: MonsterDetailComponent, pathMatch: 'full' },
     ],
