@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CrimesComponent } from '../crimes/crimes.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
 
@@ -11,7 +10,12 @@ const routes: Routes = [
     component: WelcomeComponent,
     data: { animation: 'first' },
   },
-  { path: 'crimes', component: CrimesComponent, data: { animation: 'second' } },
+  {
+    path: 'crimes-center',
+    loadChildren: () =>
+      import('../crimes/crimes.module').then((m) => m.CrimesModule),
+    data: { animation: 'second' },
+  },
   {
     path: 'monsters',
     loadChildren: () =>

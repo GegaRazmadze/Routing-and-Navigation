@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HeaderComponent } from './navigation/header/header.component';
-import { CrimesComponent } from './crimes/crimes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MonstersModule } from './monsters/monsters.module';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -15,7 +14,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    CrimesComponent,
     PageNotFoundComponent,
     WelcomeComponent,
   ],
