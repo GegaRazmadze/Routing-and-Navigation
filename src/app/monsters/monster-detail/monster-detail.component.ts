@@ -21,6 +21,7 @@ export class MonsterDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //Get Monster Observable By Id
     this.monster$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.monsterService.getMonster(params.get('id')!)
@@ -28,6 +29,7 @@ export class MonsterDetailComponent implements OnInit {
     );
   }
 
+  //Change Monster Name By Two Way data binding
   monsterNameChange(monsterId: number) {
     this.monsterService.changeMonsterName(monsterId, this.monsterName);
   }

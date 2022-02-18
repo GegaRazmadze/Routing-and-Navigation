@@ -11,6 +11,7 @@ import { slideInAnimation } from './shared/animations';
 export class AppComponent {
   title = 'Routing-and-Navigation';
 
+  //set Animation State Dynamically
   getAnimationData(outlet: RouterOutlet) {
     return outlet?.activatedRouteData?.['animation'];
   }

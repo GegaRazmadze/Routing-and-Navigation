@@ -15,6 +15,7 @@ export class MonsterListComponent implements OnInit {
   constructor(private monstersService: MonstersService) {}
 
   ngOnInit(): void {
+    //Get All Monsters Obs.
     this.monsters$ = this.monstersService.monsters$;
   }
 }
