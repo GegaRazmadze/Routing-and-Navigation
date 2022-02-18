@@ -6,13 +6,18 @@ import { WelcomeComponent } from '../welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
-  { path: 'welcome', component: WelcomeComponent },
+  {
+    path: 'welcome',
+    component: WelcomeComponent,
+    data: { animation: 'first' },
+  },
+  { path: 'crimes', component: CrimesComponent, data: { animation: 'second' } },
   {
     path: 'monsters',
     loadChildren: () =>
       import('../monsters/monsters.module').then((m) => m.MonstersModule),
+    data: { animation: 'third' },
   },
-  { path: 'crimes', component: CrimesComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
