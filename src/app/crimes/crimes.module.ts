@@ -7,7 +7,8 @@ import { CrimesCenterHomeComponent } from './crimes-center-home/crimes-center-ho
 import { CrimesDetailComponent } from './crimes-detail/crimes-detail.component';
 import { CrimesListComponent } from './crimes-list/crimes-list.component';
 import { CrimesRoutingModule } from './crimes-routing.module';
-import { CrimesMonstersModule } from './material-crimes.module';
+import { CrimesMaterialModule } from './material-crimes.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,12 @@ import { CrimesMonstersModule } from './material-crimes.module';
   ],
   imports: [
     CommonModule,
+
+    FormsModule,
+
     HttpClientModule,
     CrimesRoutingModule,
-    CrimesMonstersModule,
+    CrimesMaterialModule,
   ],
 })
 export class CrimesModule {}

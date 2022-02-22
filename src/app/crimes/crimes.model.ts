@@ -1,9 +1,9 @@
-export interface Crisis {
+export interface Crime {
   id: number;
   name: string;
 }
 
-export const CRISES: Crisis[] = [
+export const CRIMES: Crime[] = [
   { id: 1, name: 'Dragon Burning Cities' },
   { id: 2, name: 'Sky Rains Great White Sharks' },
   { id: 3, name: 'Giant Asteroid Heading For Earth' },
