@@ -22,6 +22,14 @@ const routes: Routes = [
       import('../monsters/monsters.module').then((m) => m.MonstersModule),
     data: { animation: 'third' },
   },
+  {
+    path: 'compose',
+    loadChildren: () =>
+      import('../compose-message/compose-message.module').then(
+        (m) => m.ComposeMessageModule
+      ),
+    outlet: 'popup',
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -22,7 +22,14 @@
       >
         Monsters
       </button>
-      <button class="p-2 mx-3" mat-button color="accent">Accent</button>
+      <button
+        class="p-2 mx-3"
+        mat-button
+        color="accent"
+        [routerLink]="[{ outlets: { popup: ['compose'] } }]"
+      >
+        Contact
+      </button>
     </div>
     <div class="container w-50 d-flex flex-row-reverse">
       <button class="p-2" mat-button color="accent">Login/LogOut</button>

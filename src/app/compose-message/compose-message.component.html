@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Contact Crisis Center</h3>
+  <div *ngIf="details">
+    {{ details }}
+  </div>
+  <div>
+    <div>
+      <label for="message">Enter your message: </label>
+    </div>
+    <div class="col-6">
+      <textarea
+        id="message"
+        [(ngModel)]="message"
+        rows="10"
+        cols="35"
+        [disabled]="sending"
+      ></textarea>
+    </div>
+  </div>
+  <p *ngIf="!sending">
+    <button mat-raised-button type="button" (click)="send()" class="me-3">
+      Send
+    </button>
+    <button mat-raised-button color="warn" type="button" (click)="cancel()">
+      Cancel
+    </button>
+  </p>
+</div>
